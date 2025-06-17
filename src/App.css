@@ -1,0 +1,336 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url('./assets/bgimage.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+.main-content {
+  margin-top: 10x;
+  padding: 20px 20px 20px 20px;
+}
+.content-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Top section layout */
+.top-section {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  min-height: calc(100vh - 200px);
+}
+
+.pantry-section {
+  width: 25%;
+  min-width: 300px;
+}
+
+.recipes-section {
+  width: 75%;
+  min-width: 600px;
+}
+
+/* Common section styles */
+.section {
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.section h2 {
+  font-family: 'Brittany Signature', cursive;
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Input styles */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+/* Pantry categories */
+.pantry-category {
+  margin-bottom: 20px;
+}
+
+.pantry-category h3 {
+  font-family: 'Brittany Signature', cursive;
+  font-size: 1.8rem;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+
+.pantry-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pantry-item {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border: 1px solid #e9ecef;
+}
+
+.pantry-item:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+/* Recipe filters */
+.recipe-filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-group label {
+  font-family: 'Brittany Signature', cursive;
+  font-size: 1.4rem;
+  color: #ff6b6b;
+  margin-bottom: 5px;
+}
+
+/* Selected ingredients */
+.selected-ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.selected-ingredient {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+  transition: all 0.3s ease;
+}
+
+.selected-ingredient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.remove-ingredient {
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.remove-ingredient:hover {
+  opacity: 1;
+}
+
+/* Search button */
+.search-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.search-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+}
+
+.search-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+}
+
+/* Recipe cards */
+.recipe-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.recipe-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-item h3 {
+  font-family: 'Brittany Signature', cursive;
+  font-size: 1.8rem;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+
+.recipe-item p {
+  color: #666;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.recipe-item .ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.recipe-item .ingredient {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  color: #666;
+}
+
+.recipe-item .ingredient:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+  border-color: #ff6b6b;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .top-section {
+    gap: 20px;
+  }
+  
+  .pantry-section {
+    min-width: 250px;
+  }
+  
+  .recipes-section {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-section {
+    flex-direction: column;
+  }
+  
+  .pantry-section,
+  .recipes-section {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 60px;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
+  
+  .recipe-item h3 {
+    font-size: 1.5rem;
+  }
+  
+  .pantry-item,
+  .selected-ingredient {
+    font-size: 0.8rem;
+  }
+} 
