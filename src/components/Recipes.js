@@ -6,7 +6,8 @@ const Recipes = () => {
   const [filters, setFilters] = useState({
     time: '',
     servings: '',
-    customServings: ''
+    customServings: '',
+    preference: ''
   });
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -82,7 +83,8 @@ const Recipes = () => {
       const results = await searchRecipes({
         ingredients: selectedIngredients,
         mustHaveIngredients: mustHaveIngredients,
-        maxReadyTime: filters.time,
+        time: filters.time,
+        preference: filters.preference,
         number: 12
       });
       setSearchResults(results);
@@ -194,6 +196,21 @@ const Recipes = () => {
                 <span>servings</span>
               </div>
             )}
+          </div>
+
+          <div className="filter-group">
+            <h3>Preference</h3>
+            <select
+              name="preference"
+              value={filters.preference}
+              onChange={handleFilterChange}
+              className="filter-select"
+            >
+              <option value="">Both</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+            </select>
           </div>
         </div>
 

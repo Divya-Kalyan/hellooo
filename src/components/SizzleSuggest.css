@@ -1,3 +1,4 @@
+
 .sizzle-suggest {
   width: 100%;
   margin: 0 auto;
@@ -224,6 +225,7 @@
   transition: transform 0.5s ease;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 .suggested-recipe:hover {
@@ -333,5 +335,82 @@
 
   .recipe-meta {
     font-size: 14px;
+  }
+}
+
+/* Recipe Modal Styles */
+.recipe-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 60vh;
+  overflow-y: auto;
+  position: absolute;
+  
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #ff6b6b;
+}
+
+.recipe-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.ingredients, .instructions {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.ingredients h3, .instructions h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.ingredients ul, .instructions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.ingredients li, .instructions li {
+  margin: 8px 0;
+  color: #495057;
+}
+
+@media (max-width: 768px) {
+  .recipe-details {
+    grid-template-columns: 1fr;
   }
 } 

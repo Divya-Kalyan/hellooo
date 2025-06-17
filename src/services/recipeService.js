@@ -16,12 +16,22 @@ export const searchRecipes = async (filters) => {
   try {
     const params = {
       query: filters.ingredients.join(','),
-      maxReadyTime: filters.timeNeeded,
+      maxReadyTime: filters.time,
       number: 10,
       addRecipeInformation: true,
       fillIngredients: true,
       instructionsRequired: true
     };
+
+    // Add preference filter
+    if (filters.preference) {
+      if (filters.preference === 'vegetarian') {
+        params.diet = 'vegetarian';
+      } else if (filters.preference === 'vegan') {
+        params.diet = 'vegan';
+      }
+      // For non-vegetarian, we don't add any diet parameter
+    }
 
     const url = createUrl('complexSearch', params);
     console.log('Search URL:', url);
